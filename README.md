@@ -1,0 +1,1 @@
+BuyNest Backend is a secure REST API built with Node.js, Express, and MongoDB. It manages user accounts, product data, orders, inventory, and supplier information. It also supports real-time delivery tracking, dynamic financial reporting, and automated report generation, ensuring smooth and reliable business operations.
