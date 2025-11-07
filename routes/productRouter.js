@@ -1,14 +1,24 @@
 import express from "express";
-import { deleteProduct, getProducts, getProductById,getProductsByCategory, saveProduct, updateProduct, searchProducts } from "../controllers/productController.js";
+import {
+  deleteProduct,
+  getProducts,
+  getProductById,
+  getProductsByCategory,
+  saveProduct,
+  updateProduct,
+  searchProducts,
+  notifySupplier
+} from "../controllers/productController.js";
 
 const productRouter = express.Router();
 
+productRouter.post("/notify", notifySupplier);
 productRouter.get("/search", searchProducts);
-productRouter.post("/",saveProduct);
-productRouter.get("/",getProducts);
-productRouter.get("/:productId", getProductById); // 👈 add this line
-productRouter.delete("/:productId",deleteProduct);
-productRouter.put("/:productId",updateProduct);
+productRouter.post("/", saveProduct);
+productRouter.get("/", getProducts);
 productRouter.post("/category", getProductsByCategory);
+productRouter.put("/:productId", updateProduct);
+productRouter.delete("/:productId", deleteProduct);
+productRouter.get("/:productId", getProductById);
 
 export default productRouter;
